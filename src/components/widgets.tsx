@@ -65,7 +65,7 @@ const ExposurePie = ({ field, title }: { field: any; title: string }) => {
           </Pie>
           <Tooltip
             contentStyle={tooltipStyle}
-            formatter={(v: number, _n, p: any) => [`${fmtCurrency(v)} (${p.payload.pct.toFixed(1)}%)`, p.payload.name]}
+            formatter={(v: any, _n: any, p: any) => [`${fmtCurrency(v)} (${p.payload.pct.toFixed(1)}%)`, p.payload.name]}
           />
           <Legend wrapperStyle={{ fontSize: 11, color: "var(--muted-foreground)" }} />
         </PieChart>
@@ -85,7 +85,7 @@ const ExposureBar = ({ field }: { field: any }) => {
           <CartesianGrid stroke="var(--border)" strokeDasharray="2 4" horizontal={false} />
           <XAxis type="number" tickFormatter={(v) => fmtCurrency(v)} stroke="var(--muted-foreground)" fontSize={10} />
           <YAxis type="category" dataKey="name" stroke="var(--muted-foreground)" fontSize={10} width={110} interval={0} />
-          <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => fmtCurrency(v)} cursor={{ fill: "var(--accent)", opacity: 0.3 }} />
+          <Tooltip contentStyle={tooltipStyle} formatter={(v: any) => fmtCurrency(v)} cursor={{ fill: "var(--accent)", opacity: 0.3 }} />
           <Bar dataKey="value" fill="var(--chart-1)" radius={[0, 4, 4, 0]} />
         </BarChart>
       </ResponsiveContainer>
@@ -186,7 +186,7 @@ function CapGains() {
             <CartesianGrid stroke="var(--border)" strokeDasharray="2 4" vertical={false} />
             <XAxis dataKey="name" stroke="var(--muted-foreground)" fontSize={10} />
             <YAxis tickFormatter={(v) => fmtCurrency(v)} stroke="var(--muted-foreground)" fontSize={10} />
-            <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => fmtCurrency(v)} />
+            <Tooltip contentStyle={tooltipStyle} formatter={(v: any) => fmtCurrency(v)} />
             <Legend wrapperStyle={{ fontSize: 11 }} />
             <Bar dataKey="shortTerm" name="Short Term" fill="var(--chart-2)" />
             <Bar dataKey="longTerm" name="Long Term" fill="var(--chart-3)" />
@@ -235,7 +235,7 @@ function PerfTrend() {
           <CartesianGrid stroke="var(--border)" strokeDasharray="2 4" vertical={false} />
           <XAxis dataKey="date" stroke="var(--muted-foreground)" fontSize={10} />
           <YAxis tickFormatter={(v) => fmtCurrency(v)} stroke="var(--muted-foreground)" fontSize={10} />
-          <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => fmtCurrency(v)} />
+          <Tooltip contentStyle={tooltipStyle} formatter={(v: any) => fmtCurrency(v)} />
           <Area type="monotone" dataKey="marketValue" name="Market Value" stroke="var(--chart-1)" fill="url(#mvFill)" strokeWidth={2} />
           <Line type="monotone" dataKey="cost" name="Cost" stroke="var(--chart-2)" strokeWidth={1.5} dot={false} />
         </AreaChart>
@@ -255,7 +255,7 @@ function TradeAct() {
           <CartesianGrid stroke="var(--border)" strokeDasharray="2 4" vertical={false} />
           <XAxis dataKey="month" stroke="var(--muted-foreground)" fontSize={10} />
           <YAxis tickFormatter={(v) => fmtCurrency(v)} stroke="var(--muted-foreground)" fontSize={10} />
-          <Tooltip contentStyle={tooltipStyle} formatter={(v: number) => fmtCurrency(v)} />
+          <Tooltip contentStyle={tooltipStyle} formatter={(v: any) => fmtCurrency(v)} />
           <Legend wrapperStyle={{ fontSize: 11 }} />
           <Bar dataKey="buy" name="Buy" fill="var(--chart-3)" stackId="a" />
           <Bar dataKey="sell" name="Sell" fill="var(--chart-7)" stackId="a" />
