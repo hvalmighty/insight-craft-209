@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Layout } from "react-grid-layout";
+import type { Layout as LayoutItem } from "react-grid-layout";
+type LayoutArr = LayoutItem[];
 import type { ParsedWorkbook } from "./parse-excel";
 
 export type WidgetType =
@@ -32,16 +33,16 @@ interface State {
   workbook: ParsedWorkbook | null;
   selectedCustomer: string | null;
   widgets: WidgetInstance[];
-  layout: Layout[];
+  layout: LayoutArr;
   setWorkbook: (wb: ParsedWorkbook | null) => void;
   setCustomer: (c: string | null) => void;
   addWidget: (type: WidgetType) => void;
   removeWidget: (id: string) => void;
-  setLayout: (l: Layout[]) => void;
+  setLayout: (l: LayoutArr) => void;
   resetDashboard: () => void;
 }
 
-const defaultWidgets = (): { widgets: WidgetInstance[]; layout: Layout[] } => {
+const defaultWidgets = (): { widgets: WidgetInstance[]; layout: LayoutArr } => {
   const items: { type: WidgetType; w: number; h: number; x: number; y: number }[] = [
     { type: "kpi_market_value", x: 0, y: 0, w: 3, h: 2 },
     { type: "kpi_unrealized_pl", x: 3, y: 0, w: 3, h: 2 },
@@ -56,7 +57,7 @@ const defaultWidgets = (): { widgets: WidgetInstance[]; layout: Layout[] } => {
     id: `w_${i}_${it.type}`,
     type: it.type,
   }));
-  const layout: Layout[] = items.map((it, i) => ({
+  const layout: LayoutArr = items.map((it, i) => ({
     i: widgets[i].id,
     x: it.x,
     y: it.y,
