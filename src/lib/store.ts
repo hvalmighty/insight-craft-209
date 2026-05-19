@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Layout as LayoutItem } from "react-grid-layout";
+import type { LayoutItem } from "react-grid-layout";
 type LayoutArr = LayoutItem[];
 import type { ParsedWorkbook } from "./parse-excel";
 
