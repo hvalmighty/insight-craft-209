@@ -73,16 +73,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@harshvardhan" },
       { name: "twitter:title", content: "Analytics" },
       { name: "twitter:description", content: "Analytics" },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.harshvardhan.app-1779200101980.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.harshvardhan.app-1779200101980.png",
-      },
     ],
     links: [
       {
