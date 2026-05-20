@@ -1,12 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 
@@ -39,9 +32,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -74,16 +65,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Analytics" },
       { name: "description", content: "Analytics" },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "harshvardhan" },
       { property: "og:title", content: "Analytics" },
       { property: "og:description", content: "Analytics" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@harshvardhan" },
       { name: "twitter:title", content: "Analytics" },
       { name: "twitter:description", content: "Analytics" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.lovable.app-1779200101980.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.lovable.app-1779200101980.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.harshvardhan.app-1779200101980.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d4f892b-d54b-4232-a5b1-47977513ac5d/id-preview-4e15aa71--cff7ea83-ca96-4d97-af5c-953339717bdb.harshvardhan.app-1779200101980.png",
+      },
     ],
     links: [
       {
